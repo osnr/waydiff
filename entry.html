@@ -2,13 +2,39 @@
   <head>
     <script src="libs/fetch-jsonp.js"></script>
     <script src="libs/resemble.js"></script>
+
+    <style>
+     iframe {
+         position: absolute;
+         width: 100%;
+         height: calc(100% - 30px);
+         top: 30px;
+         left: 0;
+         border: 0;
+     }
+     #left-select, #right-select {
+         width: 80%;
+     }
+    </style>
   </head>
 
   <body>
-    <input id="urlInput" type="text" value="http://bbc.com">
-    <button id="fetchBtn">Fetch</button>
+    <input id="url-input" type="text" value="https://news.bbc.co.uk">
+    <button id="fetch-btn">Fetch</button>
 
-    <pre id="container"></pre>
+    <div id="left" style="position: absolute; width: 50%; height: calc(50% - 40px); top: 40px; left: 0">
+      <select id="left-select"></select>
+      <iframe id="left-iframe"></iframe>
+    </div>
+
+    <div id="right" style="position: absolute; width: 50%; height: calc(50% - 40px); top: 40px; left: 50%">
+      <select id="right-select"></select>
+      <iframe id="right-iframe"></iframe>
+    </div>
+
+    <div id="bottom" style="position: absolute; width: 100%; top: 50%; height: 50%; left: 0">
+      <img id="bottom-img">
+    </div>
 
     <script src="entry.js"></script>
   </body>
