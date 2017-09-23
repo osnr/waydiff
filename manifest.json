@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Waydiff",
+  "description": "Wayback Machine diff.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://web.archive.org/*", "http://web.archive.org/*"],
+      "js": ["libs/html2canvas.js", "hook.js"],
+      "all_frames": true
+    }
+  ],
+
+  "permissions": ["tabs"]
+}
